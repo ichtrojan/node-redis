@@ -24,6 +24,8 @@ to setup this application:
 * get a user: /user/{id}
 * update a user: /user/update/{id}
 
+![image0](http://res.cloudinary.com/ichtrojan/image/upload/v1515177724/Screen_Shot_2018-01-05_at_7.35.23_PM_zfres7.png)
 
+![image1](http://res.cloudinary.com/ichtrojan/image/upload/v1515177880/Screen_Shot_2018-01-05_at_7.43.57_PM_tlrmku.png)
 Regards
 Michael Okoh
