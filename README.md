@@ -1,4 +1,4 @@
-# node-redis
+# CRUD operation with NodeJS and REDIS
 ## NodeJS & REDIS Setup
 First of all you need to make sure you have redis installed on your machine, and for mac users the easiest wasy to do that is to install via homebrew (http://brew.sh).
 
