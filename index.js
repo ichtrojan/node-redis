@@ -30,8 +30,32 @@ app.get('/', function(req, res, next){
 });
 
 app.get('/users', function (req, res, next) {
-  client.hgetall("2", function (err, reply) {
-    res.send(reply);
+  // client.hgetall("2", function (err, reply) {
+  //   res.send(reply);
+  // });
+
+  var return_dataset = [];
+  client.keys('*', function(err, id) {
+
+      var multi = client.multi();
+      var keys = Object.keys(id);
+      var i = 0;
+
+      keys.forEach(function (l) {
+          client.hgetall(id[l], function(e, o) {
+              i++;
+              if (e) {console.log(e)} else {
+                  temp_data = {'id':id[l],'data':o};
+                  return_dataset.push(temp_data);
+              }
+
+              if (i == keys.length) {
+                  res.send({users:return_dataset});
+              }
+
+          });
+      });
+
   });
 });
 
