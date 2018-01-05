@@ -3,6 +3,7 @@
 to setup this application:
 * clone the repo
 * change directory
+* run `npm install`
 * run `npm start`
 * visit localhost:3000
 
