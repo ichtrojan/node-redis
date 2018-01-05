@@ -3,7 +3,6 @@ const path = require('path');
 const async = require('async');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const redisScan = require('redisscan');
 const redis = require('redis');
 
 // Create Redis Client
@@ -31,26 +30,10 @@ app.get('/', function(req, res, next){
 });
 
 app.get('/users', function (req, res, next) {
-  var users = [];
-  client.hkeys('*', function (err, keys) {
-      if (err) return console.log(err);
-      if(keys){
-          async.map(keys, function(key, cb) {
-             client.get(key, function (error, value) {
-                  if (error) return cb(error);
-                  var user = {};
-                  user['id']=key;
-                  user['data']=value;
-                  cb(null, user);
-              }); 
-          }, function (error, results) {
-             if (error) return console.log(error);
-             console.log(results);
-             res.send({data:results});
-          });
-      }
+  client.hgetall("2", function (err, reply) {
+    res.send(reply);
   });
-})
+});
 
 //Add User
 app.post('/user/add', function(req, res, next){
