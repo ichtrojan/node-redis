@@ -29,10 +29,10 @@ app.get('/', function(req, res, next){
 });
 
 app.get('/users', function (req, res, next) {
-  client.hgetall("users", function (err, reply) {
+  client.hgetall("2", function (err, reply) {
     res.send(reply);
   });
-})
+});
 
 //Add User
 app.post('/user/add', function(req, res, next){
