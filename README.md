@@ -19,11 +19,11 @@ to setup this application:
 `id`
 
 ## Using Postman
-* add user: /user/add
-* delete user: /user/delete/{id}
-* get a user: /user/{id}
-* update a user: /user/update/{id}
-* get all users: /users
+* add user: `/user/add`
+* delete user: `/user/delete/{id}`
+* get a user: `/user/{id}`
+* update a user: `/user/update/{id}`
+* get all users: `/users`
 
 ![image0](http://res.cloudinary.com/ichtrojan/image/upload/v1515177724/Screen_Shot_2018-01-05_at_7.35.23_PM_zfres7.png)
 
