@@ -30,10 +30,6 @@ app.get('/', function(req, res, next){
 });
 
 app.get('/users', function (req, res, next) {
-  // client.hgetall("2", function (err, reply) {
-  //   res.send(reply);
-  // });
-
   var return_dataset = [];
   client.keys('*', function(err, id) {
 
@@ -52,10 +48,8 @@ app.get('/users', function (req, res, next) {
               if (i == keys.length) {
                   res.send({users:return_dataset});
               }
-
           });
       });
-
   });
 });
 
