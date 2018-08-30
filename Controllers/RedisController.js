@@ -79,12 +79,14 @@ exports.get_user = (req, res, next) => {
 }
 
 exports.update_user = (req, res, next) => {
+  // put Parameters
   let id = req.params.id
   let first_name = req.body.first_name
   let last_name = req.body.last_name
   let email = req.body.email
   let phone = req.body.phone
 
+  // make id the key and assign the id to the other Parameters
   client.hmset(id, [
     'first_name', first_name,
     'last_name', last_name,
