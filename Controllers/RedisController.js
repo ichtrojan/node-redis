@@ -94,10 +94,10 @@ exports.update_user = (req, res, next) => {
     'phone', phone
   ], (err, reply) => {
     if (err) {
-      console.log(err)
+      console.log(err)  // callback to log errors
     }
 
-    console.log(reply)
-    res.send("User updated successfully")
+    console.log(reply)  // log success message
+    res.send("User updated successfully") // response to client 
   })
 }
