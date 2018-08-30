@@ -55,9 +55,10 @@ exports.delete_user = (req, res, next) => {
     if (err) {
       console.log(err)  // callback incase something goes wrong
     }
-  )
 
-  res.send('User deleted successfully') // response back to the client
+    console.log(reply)  // log success message
+    res.send('User deleted successfully') // response back to the client
+  })
 }
 
 exports.get_user = (req, res, next) => {
@@ -98,6 +99,6 @@ exports.update_user = (req, res, next) => {
     }
 
     console.log(reply)  // log success message
-    res.send("User updated successfully") // response to client 
+    res.send("User updated successfully") // response to client
   })
 }
